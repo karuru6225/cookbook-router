@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'iptables'
+include_recipe 'iptables::router'
 
 settings = Chef::EncryptedDataBagItem.load('router', 'settings') ||
            node['router']
