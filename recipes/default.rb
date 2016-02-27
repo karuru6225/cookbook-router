@@ -26,7 +26,7 @@ template '/etc/network/interfaces' do
     lan_if: settings['lan_if'],
     wan_if: settings['wan_if'],
     network: settings['network'],
-    router: settings['router_ip'],
+    router_ip: settings['router_ip'],
     netmask: settings['netmask']
   )
 end
