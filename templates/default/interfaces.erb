@@ -3,7 +3,7 @@ iface lo inet loopback
 
 <% @interfaces.each do |iface, opt| %>
   <%=  opt['type'] + ' ' + iface %>
-  <%=  'iface ' + iface + ' inet ' + opt['mode']
+  <%=  'iface ' + iface + ' inet ' + opt['mode'] %>
   <% opt['params'].each do |k, v| %>
     <%= k + ' ' + v %>
   <% end %>
