@@ -58,6 +58,6 @@ template '/etc/ppp/peers/dsl-provider' do
   mode 00640
   variables(
     user: settings['pppoe_user'],
-    pass: settings['pppoe_pass']
+    iface: settings['pppoe_iface']
   )
 end
