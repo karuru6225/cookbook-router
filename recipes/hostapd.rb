@@ -25,6 +25,7 @@ template '/etc/hostapd/hostapd.conf' do
   mode 00600
   variables(
     mode: settings['wlan_mode'],
+    channel: settings['wlan_channel'],
     ht_capab: settings['wlan_ht_capab'],
     ssid: settings['wlan_ssid'],
     pass: settings['wlan_pass']
