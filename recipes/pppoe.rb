@@ -15,14 +15,14 @@ package 'pppoe' do
   action :install
 end
 
-cookbook_file '/etc/ppp/if-up.d/0clampmss' do
+cookbook_file '/etc/ppp/ip-up.d/0clampmss' do
   source '0clampmss_ip-up'
   owner 'root'
   group 'root'
   mode 00755
 end
 
-cookbook_file '/etc/ppp/if-down.d/0clampmss' do
+cookbook_file '/etc/ppp/ip-down.d/0clampmss' do
   source '0clampmss_ip-down'
   owner 'root'
   group 'root'
