@@ -2,11 +2,11 @@ auto lo
 iface lo inet loopback
 
 <% @interfaces.each do |iface, opt| %>
-  <%=  opt['type'] + ' ' + iface %>
-  <%=  'iface ' + iface + ' inet ' + opt['mode'] %>
+<%=  "\n" + opt['type'] + ' ' + iface %>
+<%=  'iface ' + iface + ' inet ' + opt['mode'] %>
   <% if opt['params'] %>
     <% opt['params'].each do |k, v| %>
-      <%= k + ' ' + v %>
+<%= k + ' ' + v %>
     <% end %>
   <% end %>
 <% end %>

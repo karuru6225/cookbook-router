@@ -52,7 +52,7 @@ template '/etc/ppp/pap-secrets' do
 end
 
 template '/etc/ppp/peers/dsl-provider' do
-  source 'dsl-provider'
+  source 'dsl-provider.erb'
   owner 'root'
   group 'root'
   mode 00640
