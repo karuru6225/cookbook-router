@@ -3,8 +3,8 @@ default['router']['interfaces'] = {
     type: "allow-hotplug",
     mode: "static",
     params: {
-      "address": "192.168.0.1",
-      "netmask": "255.255.255.0"
+      address: "192.168.0.1",
+      netmask: "255.255.255.0"
     }
   }
 }
