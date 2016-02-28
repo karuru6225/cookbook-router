@@ -24,10 +24,10 @@ template '/etc/hostapd/hostapd.conf' do
   group 'root'
   mode 00600
   variables(
-    mode: settings['mode'],
-    ht_capab: settings['ht_capab'],
-    ssid: settings['ssid'],
-    pass: settings['pass']
+    mode: settings['wlan_mode'],
+    ht_capab: settings['wlan_ht_capab'],
+    ssid: settings['wlan_ssid'],
+    pass: settings['wlan_pass']
   )
   notifies :restart, 'service[hostapd]', :delayed
 end

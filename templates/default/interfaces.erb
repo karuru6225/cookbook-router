@@ -1,19 +1,10 @@
 auto lo
 iface lo inet loopback
 
-allow-hotplug <%= @lan_if %>
-iface <%= @lan_if %> inet manual
-
-allow-hotplug wlan0
-iface wlan0 inet manual
-
-auto br0
-iface br0 inet static
-address <%= @network %><%= @router_ip %>
-netmask <%= @netmask %>
-bridge_ports <%= @lan_if %>
-
-auto dsl-provider
-iface dsl-provider inet ppp
-pre-up /sbin/ifconfig <%= @wan_if %> up
-provider dsl-provider
+<% @interfaces.each do |iface, opt| %>
+  <%=  opt['type'] + ' ' + iface %>
+  <%=  'iface ' + iface + ' inet ' + opt['mode']
+  <% opt['params'].each do |k, v| %>
+    <%= k + ' ' + v %>
+  <% end %>
+<% end %>

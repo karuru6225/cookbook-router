@@ -1,5 +1,13 @@
-default['router']['lan_if'] = 'eth0'
-default['router']['wan_if'] = 'eth1'
+default['router']['interfaces'] = {
+  eth0: {
+    type: "allow-hotplug",
+    mode: "static",
+    params: {
+      "address": "192.168.0.1",
+      "netmask": "255.255.255.0"
+    }
+  }
+}
 default['router']['domain'] = 'example.com'
 default['router']['network'] = '192.168.0.'
 default['router']['router_ip'] = '1'
@@ -19,3 +27,5 @@ default['router']['wlan_mode'] = 'g'
 default['router']['wlan_ht_capab'] = '[LDPC][HT40-][HT40+][SMPS-STATIC][GF][SHORT-GI-20][SHORT-GI-40][TX-STBC][RX-STBC123][DELAYED-BA][MAX-AMSDU-7935][DSSS_CCK-40][PSMP][LSIG-TXOP-PROT]'
 default['router']['wlan_ssid'] = 'wlan-ssid'
 default['router']['wlan_pass'] = 'tekitonapassword'
+default['router']['pppoe_user'] = 'user@pppoe'
+default['router']['pppoe_pass'] = 'p@ssw0rdpppoe'

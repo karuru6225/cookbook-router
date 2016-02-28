@@ -23,11 +23,7 @@ template '/etc/network/interfaces' do
   group 'root'
   mode 00644
   variables(
-    lan_if: settings['lan_if'],
-    wan_if: settings['wan_if'],
-    network: settings['network'],
-    router_ip: settings['router_ip'],
-    netmask: settings['netmask']
+    interfaces: settings['interfaces']
   )
 end
 
