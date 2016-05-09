@@ -74,3 +74,10 @@ template '/etc/dnsmasq.conf' do
   )
   notifies :restart, 'service[dnsmasq]', :delayed
 end
+
+template '/etc/dhcp/dhclient.conf' do
+  source 'dhclient.conf.erb'
+  owner 'root'
+  group 'root'
+  mode 00644
+end
