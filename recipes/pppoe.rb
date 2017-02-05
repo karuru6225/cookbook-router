@@ -35,8 +35,7 @@ template '/etc/ppp/chap-secrets' do
   group 'root'
   mode 00600
   variables(
-    user: settings['pppoe_user'],
-    pass: settings['pppoe_pass']
+    users: settings['chap_users'],
   )
 end
 

@@ -12,6 +12,13 @@ include_recipe 'iptables::router'
 settings = Chef::EncryptedDataBagItem.load('router', 'settings') ||
            node['router']
 
+
+%w(wakeonlan).each do |name|
+  package name
+    action :install
+  end
+end
+
 # network device settings
 package 'bridge-utils' do
   action :install
