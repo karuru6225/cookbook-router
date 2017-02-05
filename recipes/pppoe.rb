@@ -35,7 +35,7 @@ template '/etc/ppp/chap-secrets' do
   group 'root'
   mode 00600
   variables(
-    users: settings['chap_users'],
+    users: settings['chap_users']
   )
 end
 
