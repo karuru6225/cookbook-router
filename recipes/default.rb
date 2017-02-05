@@ -14,7 +14,7 @@ settings = Chef::EncryptedDataBagItem.load('router', 'settings') ||
 
 
 %w(wakeonlan).each do |name|
-  package name
+  package name do
     action :install
   end
 end
